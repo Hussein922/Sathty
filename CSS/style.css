@@ -1,35 +1,31 @@
-/* style.css - الإصدار 3.3 (تحديث مع منع تحديد النص ومعلومات الاتصال في التذييل) */
+/* style.css - الإصدار 3.4 (تحديث مع قواعد إظهار معلومات الاتصال البديلة) */
 
-/* --- تعريف متغيرات CSS (CSS Variables) --- */
 :root {
-    --primary-color: #00cc00; /* اللون الأخضر الأساسي */
-    --secondary-color: #39ff14; /* لون أخضر أكثر سطوعاً للتركيز */
-    --text-color-light: #c0c0c0; /* لون رمادي فاتح للنص العادي */
-    --text-color-dark: #1a2a3a; /* لون داكن جداً للخلفيات أو العناصر التي تحتاج تبايناً عالياً */
-    --bg-dark-start: #1a2a3a; /* بداية تدرج الخلفية الأزرق الداكن */
-    --bg-dark-end: #2a4a6a; /* نهاية تدرج الخلفية الأزرق الداكن */
-    --bg-section: rgba(255, 255, 255, 0.05); /* خلفية خفيفة للأقسام */
-    --bg-service-item: rgba(0, 0, 0, 0.2); /* خلفية أغمق لعناصر الخدمات */
-    --border-color-green: rgba(0, 204, 0, 0.3); /* لون حدود أخضر شبه شفاف */
+    --primary-color: #00cc00;
+    --secondary-color: #39ff14;
+    --text-color-light: #c0c0c0;
+    --text-color-dark: #1a2a3a;
+    --bg-dark-start: #1a2a3a;
+    --bg-dark-end: #2a4a6a;
+    --bg-section: rgba(255, 255, 255, 0.05);
+    --bg-service-item: rgba(0, 0, 0, 0.2);
+    --border-color-green: rgba(0, 204, 0, 0.3);
 
-    /* متغيرات المسافات تستخدم وحدات rem للتجاوب مع حجم الخط الأساسي */
-    --spacing-extra-small: 0.5rem; /* 8px افتراضياً */
-    --spacing-small: 1rem;      /* 16px افتراضياً */
-    --spacing-medium: 1.5rem;   /* 24px افتراضياً */
-    --spacing-large: 2.5rem;    /* 40px افتراضياً */
-    --spacing-extra-large: 4rem; /* 64px افتراضياً */
+    --spacing-extra-small: 0.5rem;
+    --spacing-small: 1rem;
+    --spacing-medium: 1.5rem;
+    --spacing-large: 2.5rem;
+    --spacing-extra-large: 4rem;
 
-    --container-max-width: 1200px; /* أقصى عرض للحاوية */
+    --container-max-width: 1200px;
 }
 
-
-/* --- إعادة تعيين أساسية (Basic Reset) وتنسيقات الجسم العامة --- */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
 html {
-    font-size: 100%; /* لضمان أن 1rem = 16px افتراضياً */
+    font-size: 100%;
 }
 
 body {
@@ -44,26 +40,20 @@ body {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
-    /* لتحسين التمرير على بعض الأجهزة */
     -webkit-overflow-scrolling: touch;
     overflow-scrolling: touch;
-
-    /* --- إضافة لمنع تحديد النص بصرياً --- */
-    user-select: none; /* قياسي */
-    -webkit-user-select: none; /* لمتصفحات WebKit (مثل Chrome و Safari) */
-    -moz-user-select: none; /* لمتصفح Firefox */
-    -ms-user-select: none; /* لمتصفح Edge القديم و Internet Explorer */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
-/* تنسيق للحاوية الرئيسية التي ستلف معظم المحتوى في الـ index.html */
 .container {
     max-width: var(--container-max-width);
     margin: 0 auto;
     padding: 0 var(--spacing-medium);
 }
 
-
-/* --- تنسيقات الخطوط (Typography) --- */
 h1, h2, h3 {
     color: var(--secondary-color);
     margin-bottom: var(--spacing-small);
@@ -96,7 +86,6 @@ h3 {
     padding-right: var(--spacing-medium);
 }
 
-/* إضافة خط زخرفي صغير بجوار عناوين الخدمات باستخدام Pseudo-element */
 h3::before {
     content: '';
     display: inline-block;
@@ -110,13 +99,11 @@ h3::before {
     border-radius: 2px;
 }
 
-
 p {
     margin-bottom: var(--spacing-medium);
     color: var(--text-color-light);
 }
 
-/* --- تنسيقات الروابط (Links) --- */
 a {
     color: var(--secondary-color);
     text-decoration: none;
@@ -128,7 +115,6 @@ a:hover {
     opacity: 0.9;
 }
 
-/* تنسيق التركيز (Focus State) لعناصر التفاعل لتحسين إمكانية الوصول */
 a:focus-visible,
 button:focus-visible {
     outline: 3px solid var(--secondary-color);
@@ -136,8 +122,6 @@ button:focus-visible {
     border-radius: 5px;
 }
 
-
-/* --- تنسيقات الرأس (Header) --- */
 header {
     background-color: rgba(var(--text-color-dark), 0.3);
     color: #ffffff;
@@ -153,7 +137,6 @@ header p {
      margin-bottom: 0;
 }
 
-/* --- تنسيقات المحتوى الرئيسي (Main Content) --- */
 main {
     padding: var(--spacing-medium) 0;
 }
@@ -166,7 +149,6 @@ section {
     backdrop-filter: blur(3px);
 }
 
-/* --- تنسيقات عناصر الخدمات (Service Items) --- */
 .service-item {
     background-color: var(--bg-service-item);
     padding: var(--spacing-medium);
@@ -174,8 +156,6 @@ section {
     border-radius: 8px;
     border: 1px solid var(--border-color-green);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    /* تهيئة العنصر ليكون حاوية للاستعلامات (Container Queries) */
     container-type: inline-size;
     container-name: service-card;
 }
@@ -185,7 +165,6 @@ section {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* مثال لاستخدام استعلام الحاوية (Container Query) */
 @container service-card (min-width: 400px) {
     .service-item {
         display: grid;
@@ -195,8 +174,6 @@ section {
     }
 }
 
-
-/* --- تنسيقات التذييل (Footer) --- */
 footer {
     background-color: rgba(var(--text-color-dark), 0.3);
     color: #ffffff;
@@ -206,28 +183,33 @@ footer {
     margin-top: var(--spacing-large);
 }
 
-/* --- قواعد تنسيق جديدة لقسم معلومات الاتصال في التذييل --- */
-footer .footer-contact {
-    margin-top: var(--spacing-small);
+/* قواعد تنسيق جديدة لقسم معلومات الاتصال البديلة */
+.hidden-fallback-contact {
+    display: none; /* مخفي افتراضياً */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* انتقال سلس عند الظهور */
+    margin-top: var(--spacing-medium);
     padding-top: var(--spacing-small);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 1rem;
     color: #ffffff;
 }
 
-footer .footer-contact p {
-    margin-bottom: var(--spacing-extra-small);
-    color: inherit;
+.hidden-fallback-contact.is-visible {
+    display: block; /* يظهر ككتلة */
+    opacity: 1; /* يصبح مرئياً بالكامل */
 }
 
-footer .footer-contact p:last-child {
+.hidden-fallback-contact p {
+    margin-bottom: var(--spacing-extra-small);
+    color: inherit; /* لضمان وراثة لون النص من العنصر الأب */
+}
+
+.hidden-fallback-contact p:last-child {
     margin-bottom: 0;
 }
 
 
-/* --- تنسيقات الأزرار العائمة وزر الرجوع للأعلى --- */
-
-/* حاوية الأزرار العائمة */
 .floating-buttons-container {
     position: fixed;
     bottom: var(--spacing-medium);
@@ -239,7 +221,6 @@ footer .footer-contact p:last-child {
     gap: var(--spacing-small);
 }
 
-/* تنسيقات الأزرار العائمة الفردية */
 .fab {
     display: flex;
     justify-content: center;
@@ -263,7 +244,6 @@ footer .footer-contact p:last-child {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
-/* زر الرجوع للأعلى */
 .scroll-to-top-btn {
     position: fixed;
     bottom: calc(var(--spacing-medium) + 65px);
@@ -289,8 +269,6 @@ footer .footer-contact p:last-child {
      background-color: var(--secondary-color);
 }
 
-
-/* --- تنسيقات رسالة Noscript --- */
 noscript {
     display: block;
     margin-bottom: var(--spacing-medium);
@@ -304,8 +282,6 @@ noscript div {
     border: 1px solid #f5c6cb;
     border-radius: 5px;
 }
-
-/* --- التجاوب باستخدام Media Queries --- */
 
 @media (max-width: 768px) {
      .container {
@@ -343,7 +319,6 @@ noscript div {
      }
 }
 
-/* --- استعلام وسائط لتقليل الحركة (Accessibility - Reduce Motion) --- */
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,
