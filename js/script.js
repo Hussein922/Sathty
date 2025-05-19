@@ -1,4 +1,4 @@
-// js/script.js - الإصدار 3.2 (الأخير بأفضل تحديث)
+// js/script.js - الإصدار 3.3 (تحديث مع منطق إظهار معلومات الاتصال البديلة)
 
 // انتظر حتى يتم تحميل محتوى الصفحة (DOM) بالكامل قبل تشغيل السكريبتات
 document.addEventListener('DOMContentLoaded', function() {
@@ -26,12 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const toggleScrollToTopButton = () => {
         // إظهار الزر إذا تجاوزنا 200 بكسل من الأعلى
         if (window.scrollY > 200) {
-            // استخدام opacity والانتقال في CSS لإظهار سلس بدلاً من display: block/none إذا أردت تأثير أجمل
              scrollToTopBtn.style.display = 'block';
-             // scrollToTopBtn.style.opacity = '1'; // يتطلب أن يكون display: block دائماً والتحكم بالشفافية من CSS
         } else {
              scrollToTopBtn.style.display = 'none';
-             // scrollToTopBtn.style.opacity = '0'; // يتطلب أن يكون display: block دائماً والتحكم بالشفافية من CSS
         }
     };
 
@@ -56,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // تجاهل الروابط التي هي مجرد "#" أو التي لا تشير إلى قسم معين
             if (href === '#' || href === '' || href.length < 2) {
-                // event.preventDefault(); // لا تمنع السلوك الافتراضي لـ href="#" إلا إذا كان مقصوداً تماماً
                 return; // لا تفعل شيئاً لهذه الروابط
             }
 
@@ -70,16 +66,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     // التمرير السلس إلى العنصر المستهدف باستخدام scrollIntoView
                     targetElement.scrollIntoView({
                         behavior: 'smooth' // التمرير السلس
-                        // يمكن إضافة خيارات أخرى مثل block: 'start' لتحديد موضع العنصر في مجال الرؤية
                     });
                 } else {
-                    // إذا كان الرابط يشير إلى ID غير موجود، يمكن السماح بالانتقال الافتراضي أو إظهار رسالة خطأ
                     console.warn(`Target element with ID ${targetId} not found for smooth scroll.`);
-                    // event.preventDefault(); // يمكن منع الانتقال إذا لم يتم العثور على العنصر
                 }
             } catch (e) {
                 console.error('Error with smooth scrolling for anchor link:', e);
-                // السماح بالسلوك الافتراضي إذا حدث خطأ غير متوقع
             }
         });
     });
@@ -100,17 +92,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 // تحميل مصدر الصورة
                 if (element.dataset.src) {
                     element.src = element.dataset.src;
-                    // يمكن إزالة data-src بعد التحميل: delete element.dataset.src;
                 }
 
                 // تحميل صورة الخلفية
                 if (element.dataset.bg) {
                     element.style.backgroundImage = `url('${element.dataset.bg}')`;
-                     // يمكن إزالة data-bg بعد التحميل: delete element.dataset.bg;
                 }
-
-                // إزالة فئة مساعدة إذا كانت موجودة لتطبيق أنماط بعد التحميل (اختياري)
-                // element.classList.remove('loading');
 
                 observer.unobserve(element); // توقف عن مراقبة هذا العنصر بعد تحميله
             }
@@ -123,6 +110,63 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ابدأ مراقبة جميع عناصر التحميل الكسول
     lazyLoadElements.forEach(element => observer.observe(element));
+
+
+    // --- منطق إظهار معلومات الاتصال البديلة عند فشل الأزرار (إضافة جديدة) ---
+    const callButton = document.querySelector('.fab-call');
+    const whatsappButton = document.querySelector('.fab-whatsapp');
+    const fallbackContact = document.getElementById('fallbackContact');
+
+    // دالة لإظهار معلومات الاتصال البديلة
+    function showFallbackContact() {
+        if (fallbackContact && !fallbackContact.classList.contains('is-visible')) {
+            fallbackContact.classList.add('is-visible');
+        }
+    }
+
+    // دالة للتحقق من فتح التطبيق (تقنية تقريبية)
+    function checkAppOpened(originalHref) {
+        let appOpened = false;
+        const timeout = setTimeout(() => {
+            if (!appOpened && document.visibilityState === 'visible') {
+                // إذا لم يتم تغيير حالة الرؤية (لم يتم الانتقال لتطبيق آخر) وظلت الصفحة مرئية،
+                // فمن المرجح أن التطبيق لم يفتح.
+                console.warn('App did not open, showing fallback contact.');
+                showFallbackContact();
+            }
+        }, 1500); // انتظر 1.5 ثانية (يمكن تعديل المدة حسب الرغبة)
+
+        // إذا حدث تغيير في حالة الرؤية (مثل الانتقال إلى تطبيق آخر)، يعني أن التطبيق قد فُتح
+        const handleVisibilityChange = () => {
+            if (document.visibilityState === 'hidden') {
+                appOpened = true; // تم فتح تطبيق آخر (قد يكون الهاتف/الواتساب)
+                clearTimeout(timeout);
+                document.removeEventListener('visibilitychange', handleVisibilityChange);
+            }
+        };
+
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        // محاولة فتح الرابط
+        window.location.href = originalHref;
+
+        // إذا لم يتم الكشف عن تغيير في الرؤية خلال فترة زمنية معينة، يتم تشغيل التايم آوت
+    }
+
+    // إضافة مستمعين للنقر على الأزرار
+    if (callButton) {
+        callButton.addEventListener('click', function(event) {
+            event.preventDefault(); // منع السلوك الافتراضي لكي نتحكم فيه بأنفسنا
+            checkAppOpened(this.href);
+        });
+    }
+
+    if (whatsappButton) {
+        whatsappButton.addEventListener('click', function(event) {
+            event.preventDefault(); // منع السلوك الافتراضي
+            checkAppOpened(this.href);
+        });
+    }
 
 
     // --- منطق الحماية الأساسية (Client-side Protection) ---
