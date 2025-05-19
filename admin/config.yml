@@ -1,0 +1,16 @@
+backend:
+  name: git-gateway
+  branch: main # تأكد أن هذا هو الفرع الرئيسي لمستودعك على GitHub (عادةً main أو master)
+
+media_folder: "images/uploads" # المجلد الذي سيتم رفع الصور إليه
+public_folder: "/images/uploads" # المسار العام للصور
+
+collections:
+  - name: "services" # اسم المجموعة
+    label: "خدماتنا" # الاسم الظاهر في لوحة التحكم
+    folder: "_data/services" # المجلد الذي سيتم حفظ ملفات الخدمات فيه
+    create: true # السماح بإنشاء خدمات جديدة
+    slug: "{{slug}}" # إنشاء اسم ملف بناءً على عنوان الخدمة
+    fields:
+      - {label: "العنوان الرئيسي", name: "title", widget: "string", required: true}
+      - {label: "الوصف", name: "description", widget: "markdown"}
