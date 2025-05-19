@@ -1,5 +1,7 @@
 backend:
   name: git-gateway
+  # أضف السطر التالي:
+  base_url: https://sathty.netlify.app/ # تأكد من استبدال هذا بعنوان موقعك الفعلي
   branch: main # تأكد أن هذا هو الفرع الرئيسي لمستودعك على GitHub (عادةً main أو master)
 
 media_folder: "images/uploads" # المجلد الذي سيتم رفع الصور إليه
