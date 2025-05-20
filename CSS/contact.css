@@ -1,0 +1,31 @@
+/*
+  contact.css
+  ------------------
+  تنسيق قسم التواصل.
+  يشمل تنسيق النصوص، الأيقونات، والروابط الخاصة بمعلومات الاتصال.
+*/
+
+#contact .contact-details {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1.2em;
+}
+
+#contact .contact-details p {
+  margin-bottom: 10px;
+}
+
+#contact .contact-details i {
+  color: var(--primary-color);
+  margin-left: 10px;
+}
+
+#contact .contact-details a {
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#contact .contact-details a:hover {
+  text-decoration: underline;
+}
