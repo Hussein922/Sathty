@@ -4,10 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>سطحة هيدروليك</title>
-  <meta name="description" content="سطحة هيدروليك متوفرة على مدار الساعة لنقل السيارات بأمان وسرعة.">
+  <meta name="description" content="خدمة سطحات هيدروليك سريعة وآمنة لنقل السيارات في جميع أنحاء المملكة.">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#001F3F">
 
-  <!-- روابط ملفات CSS المفصولة -->
+  <!-- تحسينات للأداء -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- ملفات CSS المفصّلة -->
   <link rel="stylesheet" href="assets/css/variables.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/header.css">
@@ -19,98 +25,103 @@
   <link rel="stylesheet" href="assets/css/floating-buttons.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
 
-  <!-- خط كايرو من Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- رأس الموقع -->
-  <header>
+  <header class="site-header">
     <div class="container">
-      <h1>سطحة هيدروليك</h1>
+      <h1 class="site-title">سطحة هيدروليك</h1>
       <nav>
-        <ul>
+        <ul class="nav-links">
           <li><a href="#hero">الرئيسية</a></li>
           <li><a href="#services">الخدمات</a></li>
-          <li><a href="#about">نبذة</a></li>
+          <li><a href="#about">من نحن</a></li>
           <li><a href="#contact">تواصل</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- القسم الرئيسي -->
-  <section id="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h2>خدمة سطحة هيدروليك فورية</h2>
-        <p>نصل إليك في أي وقت وبسرعة فائقة لنقل سيارتك بأمان.</p>
-        <div class="hero-buttons">
-          <a href="tel:0551234567" class="btn primary-btn">اتصل الآن</a>
-          <a href="https://wa.me/966551234567" class="btn secondary-btn">واتساب</a>
+  <!-- محتوى رئيسي -->
+  <main>
+
+    <!-- قسم البطل -->
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <h2>نقل سيارات فوري عبر سطحة هيدروليك</h2>
+          <p>نصل إليك في أي وقت لنقل سيارتك بأمان وكفاءة.</p>
+          <div class="hero-buttons">
+            <a href="tel:0551234567" class="btn primary-btn">اتصل الآن</a>
+            <a href="https://wa.me/966551234567" class="btn secondary-btn">راسلنا واتساب</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- الخدمات -->
-  <section id="services" class="section-padding bg-light">
-    <div class="container">
-      <h2>خدماتنا</h2>
-      <div class="services-grid">
-        <div class="service-item">
-          <div class="service-icon">🚗</div>
-          <h3>نقل سيارات معطلة</h3>
-          <p>خدمة سريعة وآمنة لنقل السيارات المتعطلة إلى أي مكان.</p>
-        </div>
-        <div class="service-item">
-          <div class="service-icon">🛻</div>
-          <h3>سطحة هيدروليك حديثة</h3>
-          <p>سطحات مجهزة لنقل السيارات الفاخرة بدون خدوش أو تلف.</p>
-        </div>
-        <div class="service-item">
-          <div class="service-icon">⏱️</div>
-          <h3>خدمة 24 ساعة</h3>
-          <p>متوفرون على مدار الساعة في جميع أيام الأسبوع.</p>
+    <!-- قسم الخدمات -->
+    <section id="services" class="section-padding bg-light">
+      <div class="container">
+        <h2 class="section-title">خدماتنا</h2>
+        <div class="services-grid">
+          <div class="service-item">
+            <div class="icon">🚘</div>
+            <h3>نقل سيارات معطلة</h3>
+            <p>خدمة فورية لنقل السيارات المعطلة بأمان.</p>
+          </div>
+          <div class="service-item">
+            <div class="icon">🛻</div>
+            <h3>سطحات حديثة</h3>
+            <p>معدات هيدروليكية مخصصة للسيارات الفارهة.</p>
+          </div>
+          <div class="service-item">
+            <div class="icon">⏰</div>
+            <h3>متوفرون دائمًا</h3>
+            <p>جاهزون لخدمتك 24/7 في جميع المناطق.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- نبذة -->
-  <section id="about" class="section-padding">
-    <div class="container">
-      <h2>من نحن</h2>
-      <p>نحن فريق متخصص في نقل السيارات بأعلى درجات الاحترافية والسلامة، باستخدام سطحات هيدروليك حديثة تغطي جميع مناطق المملكة.</p>
-    </div>
-  </section>
-
-  <!-- تواصل -->
-  <section id="contact" class="section-padding bg-light">
-    <div class="container">
-      <h2>تواصل معنا</h2>
-      <div class="contact-details">
-        <p><i class="fas fa-phone"></i> <a href="tel:0551234567">0551234567</a></p>
-        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/966551234567">واتساب مباشر</a></p>
+    <!-- من نحن -->
+    <section id="about" class="section-padding">
+      <div class="container">
+        <h2 class="section-title">من نحن</h2>
+        <p>نقدم خدمات نقل سيارات احترافية باستخدام سطحات مجهزة بالكامل لتوفير الأمان والثقة لعملائنا.</p>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- التواصل -->
+    <section id="contact" class="section-padding bg-light">
+      <div class="container">
+        <h2 class="section-title">تواصل معنا</h2>
+        <div class="contact-info">
+          <p><strong>الجوال:</strong> <a href="tel:0551234567">0551234567</a></p>
+          <p><strong>واتساب:</strong> <a href="https://wa.me/966551234567">راسلنا الآن</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- الفوتر -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 سطحة هيدروليك - جميع الحقوق محفوظة</p>
-      <div class="footer-links">
-        <a href="#hero" title="الرئيسية">⬆️</a>
-      </div>
+      <p>&copy; 2025 سطحة هيدروليك. جميع الحقوق محفوظة.</p>
     </div>
   </footer>
 
   <!-- أزرار عائمة -->
   <div class="floating-buttons">
-    <a href="tel:0551234567" class="float-button call" title="اتصل الآن">📞</a>
-    <a href="https://wa.me/966551234567" class="float-button whatsapp" title="راسلنا على واتساب">💬</a>
+    <a href="tel:0551234567" class="float-button call" aria-label="اتصل الآن">📞</a>
+    <a href="https://wa.me/966551234567" class="float-button whatsapp" aria-label="راسلنا على واتساب">💬</a>
   </div>
 
 </body>
