@@ -1,124 +1,199 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="سطحة هيدروليك - نقل وسحب السيارات بأمان واحترافية داخل وخارج المدن على مدار الساعة.">
-  <meta property="og:title" content="سطحة هيدروليك - خدمات نقل السيارات">
-  <meta property="og:description" content="خدمة سريعة وآمنة لنقل وسحب جميع أنواع السيارات والدراجات النارية">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ar">
-  <meta name="theme-color" content="#001f3f">
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="سطحة هيدروليك - أسرع خدمة نقل سيارات على مدار الساعة داخل وخارج المدينة." />
+  <meta name="keywords" content="سطحة, سطحة هيدروليك, نقل سيارات, سطحات الرياض" />
+  <meta name="theme-color" content="#001f3f" />
+  <meta property="og:title" content="سطحة هيدروليك" />
+  <meta property="og:description" content="خدمة نقل سيارات سريعة وآمنة على مدار الساعة." />
+  <meta property="og:image" content="icon-512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <title>سطحة هيدروليك - خدمات نقل وسحب السيارات</title>
+  <title>سطحة هيدروليك</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" />
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(to bottom, #001f3f, #003366);
+      color: #00ff88;
+      direction: rtl;
+      text-align: center;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    body.night {
+      background: linear-gradient(to bottom, #000814, #001533);
+      color: #aaffcc;
+    }
+
+    header {
+      padding: 2em 1em;
+    }
+
+    .subtitle {
+      font-size: 1.2em;
+    }
+
+    .greeting {
+      margin-top: 1em;
+    }
+
+    .services {
+      padding: 1em;
+    }
+
+    .services h2 {
+      color: #00ffaa;
+    }
+
+    .services ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .services li {
+      margin: 0.5em 0;
+    }
+
+    .floating-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 999;
+    }
+
+    .call-btn, .whatsapp-btn {
+      background-color: #004d33;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transition: background-color 0.3s;
+    }
+
+    .call-btn:hover, .whatsapp-btn:hover {
+      background-color: #007a5e;
+    }
+
+    #topBtn {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      display: none;
+      background-color: #004d33;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: background-color 0.3s;
+      z-index: 1000;
+    }
+
+    #topBtn:hover {
+      background-color: #007a5e;
+    }
+
+    @media (max-width: 600px) {
+      .call-btn, .whatsapp-btn, #topBtn {
+        padding: 8px 14px;
+      }
+    }
+  </style>
 </head>
-<body>
-
-  <div class="floating-buttons">
-    <a href="tel:+966555555555" class="float-button call" aria-label="اتصل الآن"><i class="fas fa-phone-alt"></i></a>
-    <a href="https://wa.me/966555555555" class="float-button whatsapp" target="_blank" rel="noopener noreferrer" aria-label="تواصل واتساب"><i class="fab fa-whatsapp"></i></a>
-  </div>
-
+<body oncontextmenu="return false" onselectstart="return false" oncopy="return false">
   <header>
-    <div class="container">
-      <h1>سطحة هيدروليك</h1>
-      <nav>
-        <ul>
-          <li><a href="#services">خدماتنا</a></li>
-          <li><a href="#about">من نحن</a></li>
-          <li><a href="#contact">اتصل بنا</a></li>
-        </ul>
-      </nav>
-      </div>
+    <h1>سطحة هيدروليك</h1>
+    <p class="subtitle">خدمة نقل سيارات سريعة وآمنة على مدار الساعة</p>
+    <p class="greeting" id="greeting">جاري تحميل المحتوى...</p>
   </header>
 
   <main>
-    <section id="hero">
-      <div class="container">
-        <div class="hero-content">
-          <h2>نقل وسحب السيارات بكل أمان واحترافية</h2>
-          <p>متوفرون على مدار الساعة لخدمتكم في جميع أنحاء المملكة</p>
-          <div class="hero-buttons">
-            <a href="tel:+966555555555" class="btn primary-btn"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
-            <a href="https://wa.me/966555555555" class="btn secondary-btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> تواصل واتساب</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="section-padding">
-      <div class="container">
-        <h2>خدماتنا</h2>
-        <div class="services-grid">
-          <div class="service-item">
-            <i class="fas fa-car-crash service-icon"></i>
-            <h3>خدمة سحب السيارات المعطلة</h3>
-            <p>نقدم خدمة سحب السيارات المعطلة على الطرق، أينما كنت وفي أي وقت. نصل إليك بسرعة ونضمن نقل سيارتك بأمان إلى الوجهة المطلوبة.</p>
-          </div>
-          <div class="service-item">
-            <i class="fas fa-tools service-icon"></i>
-            <h3>نقل السيارات للصيانة والورش</h3>
-            <p>نقوم بنقل السيارات من وإلى مراكز الصيانة والورش بأسعار منافسة ومع ضمان سلامة سيارتك طوال عملية النقل.</p>
-          </div>
-          <div class="service-item">
-            <i class="fas fa-truck-loading service-icon"></i>
-            <h3>نقل السيارات الرياضية والفارهة</h3>
-            <p>تخصص في نقل السيارات الرياضية والفارهة والعرض بأقصى درجات العناية والاحترافية، باستخدام أحدث أنواع السطحات الهيدروليكية المغلقة والمفتوحة.</p>
-          <div class="service-item">
-            <i class="fas fa-city service-icon"></i>
-            <h3>نقل داخل المدن وخارجها</h3>
-            <p>سواء كنت تحتاج إلى نقل سيارتك داخل المدينة أو بين المدن المختلفة، فإن خدماتنا تغطي جميع المناطق بفعالية وسرعة.</p>
-          </div>
-          <div class="service-item">
-            <i class="fas fa-motorcycle service-icon"></i>
-            <h3>نقل الدراجات النارية</h3>
-            <p>نوفر سطحات مخصصة لنقل الدراجات النارية بأمان تام، مع تثبيت محكم لضمان عدم تعرضها لأي ضرر أثناء النقل.</p>
-          </div>
-          <div class="service-item">
-            <i class="fas fa-road service-icon"></i>
-            <h3>خدمات الطوارئ على الطريق</h3>
-            <p>في حالة الحوادث أو الأعطال المفاجئة، فريقنا مستعد لتقديم المساعدة السريعة ونقل سيارتك من موقع الحادث بأسرع وقت ممكن.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section-padding bg-light">
-      <div class="container">
-        <h2>من نحن</h2>
-        <p>نحن "سطحة هيدروليك"، فريق متخصص في تقديم خدمات نقل وسحب السيارات بأنواعها المختلفة في جميع أنحاء المملكة. نلتزم بأعلى معايير الجودة والسلامة لضمان راحة عملائنا ووصول سياراتهم بأمان. لدينا أسطول حديث من السطحات الهيدروليكية وفريق عمل مدرب على التعامل مع كافة الظروف.</p>
-        <p>هدفنا هو تقديم خدمة سريعة، موثوقة، واحترافية تلبي جميع احتياجاتكم على مدار الساعة.</p>
-      </div>
-    </section>
-
-    <section id="contact" class="section-padding">
-      <div class="container">
-        <h2>اتصل بنا</h2>
-        <p>نحن هنا لمساعدتك على مدار الساعة، 7 أيام في الأسبوع.</p>
-        <div class="contact-details">
-          <p><i class="fas fa-phone-alt"></i> <strong>رقم الهاتف:</strong> <a href="tel:+966555555555">+966 55 555 5555</a></p>
-          <p><i class="fab fa-whatsapp"></i> <strong>واتساب:</strong> <a href="https://wa.me/966555555555" target="_blank" rel="noopener noreferrer">+966 55 555 5555</a></p>
-          <p><i class="fas fa-envelope"></i> <strong>البريد الإلكتروني:</strong> <a href="mailto:info@yourdomain.com">info@yourdomain.com</a></p>
-        </div>
-        </div>
+    <section class="services">
+      <h2>خدماتنا</h2>
+      <ul id="servicesList"></ul>
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; <span id="year"></span> سطحة هيدروليك. جميع الحقوق محفوظة.</p>
-      <div class="footer-links">
-        <a href="#" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
-        <a href="#" aria-label="إنستجرام"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-  </footer>
+  <div class="floating-buttons">
+    <a href="tel:0500000000" class="call-btn">اتصل الآن</a>
+    <a href="https://wa.me/966500000000" class="whatsapp-btn" target="_blank">واتساب</a>
+  </div>
 
-  <script src="js/script.js" defer></script>
+  <button id="topBtn" onclick="scrollToTop()">أعلى</button>
+
+  <script>
+    // نمط حسب الوقت
+    const hour = new Date().getHours();
+    const greeting = document.getElementById('greeting');
+    if (hour < 12) greeting.textContent = 'صباح الخير! نحن في خدمتك.';
+    else if (hour < 18) greeting.textContent = 'مساء الخير! تواصل معنا متى شئت.';
+    else {
+      greeting.textContent = 'ليلة سعيدة! خدماتنا مستمرة 24/7.';
+      document.body.classList.add('night');
+    }
+
+    // تحميل الخدمات من data.json
+    fetch('data.json')
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById('servicesList');
+        list.innerHTML = '';
+        data.services.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          list.appendChild(li);
+        });
+      })
+      .catch(() => {
+        greeting.textContent = 'تعذر تحميل الخدمات، حاول لاحقاً.';
+      });
+
+    // زر العودة للأعلى
+    const topBtn = document.getElementById('topBtn');
+    window.onscroll = () => {
+      topBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
+    };
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // توفير الطاقة
+    if ('getBattery' in navigator) {
+      navigator.getBattery().then(battery => {
+        if (battery.level < 0.2 && !battery.charging) {
+          document.body.style.transition = 'none';
+        }
+      });
+    }
+
+    // تسجيل الأخطاء
+    window.onerror = function(message, source, lineno) {
+      console.error('خطأ:', message, 'في:', source, 'السطر:', lineno);
+      return false;
+    };
+
+    // تسجيل Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').then(reg => {
+          console.log('تم تسجيل Service Worker:', reg.scope);
+        }).catch(err => console.error('فشل التسجيل:', err));
+      });
+    }
+  </script>
 </body>
 </html>
-
