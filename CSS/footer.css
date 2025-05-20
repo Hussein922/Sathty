@@ -1,0 +1,36 @@
+/*
+  footer.css
+  ------------------
+  تنسيق تذييل الموقع.
+  يحتوي على ألوان الخلفية والنص، محاذاة المحتوى، وتصميم روابط التذييل.
+*/
+
+footer {
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+footer p {
+  margin: 0;
+}
+
+.footer-links a {
+  color: var(--primary-light);
+  font-size: 1.5em;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
