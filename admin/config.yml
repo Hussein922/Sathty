@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  # هذا السطر مهم لتحديد القاعدة URL لخدمة Identity إذا كانت هناك مشاكل في إعادة التوجيه
+  # تأكد من استبدال https://sathty.netlify.app/ بعنوان موقعك الفعلي
+  base_url: https://sathty.netlify.app/
+  # تأكد أن هذا هو الفرع الرئيسي لمستودعك على GitHub (عادةً main أو master)
+  branch: main
+
+# المجلد الذي سيتم رفع الصور إليه (يجب أن يكون موجوداً في جذر مشروعك)
+media_folder: "images/uploads"
+# المسار العام للصور عند عرضها على الموقع (يجب أن يتطابق مع media_folder في الموقع المنشور)
+public_folder: "/images/uploads"
+
+collections:
+  - name: "services" # اسم المجموعة (يستخدم داخلياً بواسطة CMS)
+    label: "خدماتنا" # الاسم الظاهر في لوحة التحكم لتمثيل هذه المجموعة
+    folder: "_data/services" # المجلد الذي سيتم حفظ ملفات الخدمات فيه
+    create: true # السماح بإنشاء خدمات جديدة ضمن هذه المجموعة
+    slug: "{{slug}}" # إنشاء اسم ملف بناءً على عنوان الخدمة (مثل: نقل-السيارات.md)
+    fields: # الحقول التي ستظهر للمحررين عند إضافة/تعديل خدمة
+      - {label: "العنوان الرئيسي", name: "title", widget: "string", required: true}
+      - {label: "الوصف", name: "description", widget: "markdown"}
