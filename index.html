@@ -2,130 +2,23 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="سطحة هيدروليك - أسرع خدمة نقل سيارات على مدار الساعة داخل وخارج المدينة." />
-  <meta name="keywords" content="سطحة, سطحة هيدروليك, نقل سيارات, سطحات الرياض" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="سطحة هيدروليك لخدمات نقل السيارات داخل وخارج المدينة بسرعة وأمان." />
   <meta name="theme-color" content="#001f3f" />
-  <meta property="og:title" content="سطحة هيدروليك" />
-  <meta property="og:description" content="خدمة نقل سيارات سريعة وآمنة على مدار الساعة." />
-  <meta property="og:image" content="icon-512.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <title>سطحة هيدروليك</title>
   <link rel="manifest" href="manifest.json" />
-  <link rel="icon" href="favicon.ico" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" />
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Cairo', sans-serif;
-      background: linear-gradient(to bottom, #001f3f, #003366);
-      color: #00ff88;
-      direction: rtl;
-      text-align: center;
-      transition: background-color 0.5s, color 0.5s;
-    }
-
-    body.night {
-      background: linear-gradient(to bottom, #000814, #001533);
-      color: #aaffcc;
-    }
-
-    header {
-      padding: 2em 1em;
-    }
-
-    .subtitle {
-      font-size: 1.2em;
-    }
-
-    .greeting {
-      margin-top: 1em;
-    }
-
-    .services {
-      padding: 1em;
-    }
-
-    .services h2 {
-      color: #00ffaa;
-    }
-
-    .services ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .services li {
-      margin: 0.5em 0;
-    }
-
-    .floating-buttons {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 999;
-    }
-
-    .call-btn, .whatsapp-btn {
-      background-color: #004d33;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-      transition: background-color 0.3s;
-    }
-
-    .call-btn:hover, .whatsapp-btn:hover {
-      background-color: #007a5e;
-    }
-
-    #topBtn {
-      position: fixed;
-      left: 20px;
-      bottom: 20px;
-      display: none;
-      background-color: #004d33;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-      cursor: pointer;
-      transition: background-color 0.3s;
-      z-index: 1000;
-    }
-
-    #topBtn:hover {
-      background-color: #007a5e;
-    }
-
-    @media (max-width: 600px) {
-      .call-btn, .whatsapp-btn, #topBtn {
-        padding: 8px 14px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css" />
+  <title>سطحة هيدروليك</title>
 </head>
-<body oncontextmenu="return false" onselectstart="return false" oncopy="return false">
+<body>
   <header>
     <h1>سطحة هيدروليك</h1>
-    <p class="subtitle">خدمة نقل سيارات سريعة وآمنة على مدار الساعة</p>
-    <p class="greeting" id="greeting">جاري تحميل المحتوى...</p>
+    <p class="subtitle">خدمة نقل سيارات آمنة وسريعة</p>
+    <p class="greeting" id="greeting"></p>
   </header>
 
-  <main>
-    <section class="services">
-      <h2>خدماتنا</h2>
-      <ul id="servicesList"></ul>
-    </section>
+  <main class="services">
+    <h2>خدماتنا</h2>
+    <ul id="service-list"></ul>
   </main>
 
   <div class="floating-buttons">
@@ -136,63 +29,40 @@
   <button id="topBtn" onclick="scrollToTop()">أعلى</button>
 
   <script>
-    // نمط حسب الوقت
+    // تخصيص التحية حسب الوقت
+    const greeting = document.getElementById("greeting");
     const hour = new Date().getHours();
-    const greeting = document.getElementById('greeting');
-    if (hour < 12) greeting.textContent = 'صباح الخير! نحن في خدمتك.';
-    else if (hour < 18) greeting.textContent = 'مساء الخير! تواصل معنا متى شئت.';
-    else {
-      greeting.textContent = 'ليلة سعيدة! خدماتنا مستمرة 24/7.';
-      document.body.classList.add('night');
-    }
+    greeting.textContent =
+      hour < 12
+        ? "صباح الخير! نحن في خدمتك الآن."
+        : hour < 18
+        ? "مساء الخير! تواصل معنا لأي مساعدة."
+        : "مرحبًا بك في أي وقت، اتصل بنا فورًا!";
 
-    // تحميل الخدمات من data.json
-    fetch('data.json')
+    // تحميل الخدمات من ملف JSON
+    fetch("data.json")
       .then(res => res.json())
       .then(data => {
-        const list = document.getElementById('servicesList');
-        list.innerHTML = '';
-        data.services.forEach(item => {
-          const li = document.createElement('li');
-          li.textContent = item;
+        const list = document.getElementById("service-list");
+        data.services.forEach(service => {
+          const li = document.createElement("li");
+          li.textContent = service;
           list.appendChild(li);
         });
-      })
-      .catch(() => {
-        greeting.textContent = 'تعذر تحميل الخدمات، حاول لاحقاً.';
       });
 
     // زر العودة للأعلى
-    const topBtn = document.getElementById('topBtn');
-    window.onscroll = () => {
-      topBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
+    const topBtn = document.getElementById("topBtn");
+    window.onscroll = function () {
+      topBtn.style.display = window.scrollY > 100 ? "block" : "none";
     };
     function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
-
-    // توفير الطاقة
-    if ('getBattery' in navigator) {
-      navigator.getBattery().then(battery => {
-        if (battery.level < 0.2 && !battery.charging) {
-          document.body.style.transition = 'none';
-        }
-      });
-    }
-
-    // تسجيل الأخطاء
-    window.onerror = function(message, source, lineno) {
-      console.error('خطأ:', message, 'في:', source, 'السطر:', lineno);
-      return false;
-    };
 
     // تسجيل Service Worker
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js').then(reg => {
-          console.log('تم تسجيل Service Worker:', reg.scope);
-        }).catch(err => console.error('فشل التسجيل:', err));
-      });
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js");
     }
   </script>
 </body>
