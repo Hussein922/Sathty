@@ -1,76 +1,116 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>سطحة هيدروليك</title>
+  <meta name="description" content="سطحة هيدروليك متوفرة على مدار الساعة لنقل السيارات بأمان وسرعة.">
+  <meta name="robots" content="index, follow">
 
-  <!-- تحميل خطوط -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- روابط ملفات CSS المفصولة -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/hero.css">
+  <link rel="stylesheet" href="assets/css/services.css">
+  <link rel="stylesheet" href="assets/css/about.css">
+  <link rel="stylesheet" href="assets/css/contact.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/floating-buttons.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
 
-  <!-- ملفات CSS مفصولة حسب المكونات -->
-  <!-- 01. المتغيرات العامة للألوان والخطوط -->
-  <link rel="stylesheet" href="https://yourdomain.netlify.app/css/variables.css" />
-
-  <!-- 02. إعادة ضبط التنسيقات الافتراضية -->
-  <link rel="stylesheet" href="https://yourdomain.netlify.app/css/reset.css" />
-
-  <!-- 03. إعداد الحاويات والعناصر العامة -->
-  <link rel="stylesheet" href="https://yourdomain.netlify.app/css/container.css" />
-
-  <!-- 04. إعداد المسافات العامة للأقسام -->
-  <link rel="stylesheet" href="https://yourdomain.netlify.app/css/section.css" />
-
-  <!-- 05. تنسيق الخطوط والعناوين -->
-  <link rel="stylesheet" href="https://yourdomain.netlify.app/css/typography.css" />
-
-  <!-- 06. تنسيق الأزرار الرئيسية والثانوية -->
-  <link rel="stylesheet" href="https://yourdomain.netlify.app/css/buttons.css" />
-
-  <!-- 07. تنسيق الهيدر والقائمة -->
-  <link rel="stylesheet" href="https://yourdomain.netlify.app/css/header.css" />
-
-  <!-- 08. تنسيق قسم البطل (Hero Section) -->
-  <link rel="stylesheet" href="https://yourdomain.netlify.app/css/hero.css" />
-
-  <!-- 09. تنسيق قسم الخدمات -->
-  <link rel="stylesheet" href="https://yourdomain.netlify.app/css/services.css" />
-
-  <!-- 10. تنسيق قسم من نحن -->
-  <link rel="stylesheet" href="https://yourdomain.netlify.app/css/about.css" />
-
-  <!-- 11. تنسيق قسم التواصل -->
-  <link rel="stylesheet" href="https://yourdomain.netlify.app/css/contact.css" />
-
-  <!-- 12. تنسيق الفوتر وروابط التواصل -->
-  <link rel="stylesheet" href="https://yourdomain.netlify.app/css/footer.css" />
-
-  <!-- 13. أزرار عائمة (اتصال - واتساب) -->
-  <link rel="stylesheet" href="https://yourdomain.netlify.app/css/floating-buttons.css" />
-
-  <!-- 14. التنسيقات المتجاوبة مع الجوال والتابلت -->
-  <link rel="stylesheet" href="https://yourdomain.netlify.app/css/responsive.css" />
-
-  <!-- 15. دعم الوضع الداكن تلقائيًا -->
-  <link rel="stylesheet" href="https://yourdomain.netlify.app/css/dark-mode.css" />
-
+  <!-- خط كايرو من Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- هنا تضع الأقسام: header, hero, services, about, contact, footer -->
+  <!-- رأس الموقع -->
+  <header>
+    <div class="container">
+      <h1>سطحة هيدروليك</h1>
+      <nav>
+        <ul>
+          <li><a href="#hero">الرئيسية</a></li>
+          <li><a href="#services">الخدمات</a></li>
+          <li><a href="#about">نبذة</a></li>
+          <li><a href="#contact">تواصل</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <!-- مثال: -->
-  <header>...</header>
-  <section id="hero">...</section>
-  <section id="services">...</section>
-  <section id="about">...</section>
-  <section id="contact">...</section>
-  <footer>...</footer>
+  <!-- القسم الرئيسي -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h2>خدمة سطحة هيدروليك فورية</h2>
+        <p>نصل إليك في أي وقت وبسرعة فائقة لنقل سيارتك بأمان.</p>
+        <div class="hero-buttons">
+          <a href="tel:0551234567" class="btn primary-btn">اتصل الآن</a>
+          <a href="https://wa.me/966551234567" class="btn secondary-btn">واتساب</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- الخدمات -->
+  <section id="services" class="section-padding bg-light">
+    <div class="container">
+      <h2>خدماتنا</h2>
+      <div class="services-grid">
+        <div class="service-item">
+          <div class="service-icon">🚗</div>
+          <h3>نقل سيارات معطلة</h3>
+          <p>خدمة سريعة وآمنة لنقل السيارات المتعطلة إلى أي مكان.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🛻</div>
+          <h3>سطحة هيدروليك حديثة</h3>
+          <p>سطحات مجهزة لنقل السيارات الفاخرة بدون خدوش أو تلف.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">⏱️</div>
+          <h3>خدمة 24 ساعة</h3>
+          <p>متوفرون على مدار الساعة في جميع أيام الأسبوع.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- نبذة -->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <h2>من نحن</h2>
+      <p>نحن فريق متخصص في نقل السيارات بأعلى درجات الاحترافية والسلامة، باستخدام سطحات هيدروليك حديثة تغطي جميع مناطق المملكة.</p>
+    </div>
+  </section>
+
+  <!-- تواصل -->
+  <section id="contact" class="section-padding bg-light">
+    <div class="container">
+      <h2>تواصل معنا</h2>
+      <div class="contact-details">
+        <p><i class="fas fa-phone"></i> <a href="tel:0551234567">0551234567</a></p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/966551234567">واتساب مباشر</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- الفوتر -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 سطحة هيدروليك - جميع الحقوق محفوظة</p>
+      <div class="footer-links">
+        <a href="#hero" title="الرئيسية">⬆️</a>
+      </div>
+    </div>
+  </footer>
 
   <!-- أزرار عائمة -->
   <div class="floating-buttons">
-    <a href="tel:123456789" class="float-button call"><i class="fa fa-phone"></i></a>
-    <a href="https://wa.me/123456789" class="float-button whatsapp"><i class="fa fa-whatsapp"></i></a>
+    <a href="tel:0551234567" class="float-button call" title="اتصل الآن">📞</a>
+    <a href="https://wa.me/966551234567" class="float-button whatsapp" title="راسلنا على واتساب">💬</a>
   </div>
 
 </body>
