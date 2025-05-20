@@ -1,0 +1,54 @@
+/*
+  header.css
+  ------------------
+  تصميم شريط الترويسة (الهيدر) للموقع.
+  يشمل لون الخلفية، تباعد الحشو، الظلال، وأسلوب التنقل في القائمة.
+  يتضمن التصميم تجاوبًا لتناسب الشاشات المختلفة.
+*/
+
+header {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.8em;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: var(--primary-light);
+}
