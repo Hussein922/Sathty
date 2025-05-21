@@ -1,200 +1,226 @@
-/* إعدادات أساسية */
+/* Custom Properties for Colors */
 :root {
-  --color-primary: #001f3f; /* أزرق داكن */
-  --color-secondary: #00b050; /* أخضر */
-  --color-bg-light: #f0f4f8;
-  --color-bg-dark: #001f3f;
-  --color-text-light: #333;
-  --color-text-dark: #c0ffc0;
-  --transition-speed: 0.3s;
+    --primary-color: #000033; /* Dark Blue */
+    --secondary-color: #000066; /* Slightly Lighter Dark Blue for Gradient */
+    --accent-color: #00FF00; /* Green */
+    --text-color: #FFFFFF; /* White */
+    --footer-text-color: #CCCCCC; /* Light Grey for Footer */
 }
 
-/* تعيين الخطوط */
+/* Base Styles */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: var(--color-bg-light);
-  color: var(--color-text-light);
-  margin: 0;
-  padding: 20px;
-  line-height: 1.6;
-  transition: background var(--transition-speed), color var(--transition-speed);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--text-color);
+    line-height: 1.6;
+    direction: rtl; /* Right-to-left for Arabic */
+    text-align: right; /* Align text to the right */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    min-height: 100vh; /* Ensure full viewport height */
+    display: flex;
+    flex-direction: column;
 }
 
-/* الوضع الليلي */
-body.night {
-  background: var(--color-bg-dark);
-  color: var(--color-text-dark);
+/* Prevent text selection (copy-paste) */
+body {
+    -webkit-user-select: none;  /* Safari */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Standard */
 }
 
-/* وضع توفير الطاقة - إيقاف الحركات */
-body.low-power * {
-  transition: none !important;
-  animation: none !important;
-}
-
-/* الهيدر */
+/* Header */
 header {
-  text-align: center;
-  margin-bottom: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-color);
 }
 
 header h1 {
-  font-size: 2.5rem;
-  color: var(--color-primary);
-  margin-bottom: 5px;
+    margin: 0;
+    font-size: 3rem;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-header .subtitle {
-  font-size: 1.1rem;
-  color: var(--color-secondary);
+header p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-top: 0.5rem;
 }
 
-.greeting {
-  margin-top: 10px;
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: var(--color-primary);
+/* Main Content */
+main {
+    flex: 1; /* Allow main content to grow and push footer down */
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-sizing: border-box; /* Include padding in element's total width and height */
 }
 
-/* خدمات */
 .services {
-  max-width: 600px;
-  margin: 0 auto 40px;
-  padding: 0 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .services h2 {
-  color: var(--color-primary);
-  margin-bottom: 15px;
-  font-size: 1.8rem;
-  text-align: center;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.services ul {
-  list-style: none;
-  padding: 0;
+.service-item {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--accent-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.services ul li {
-  background: var(--color-secondary);
-  color: white;
-  margin: 8px 0;
-  padding: 12px 15px;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
-  font-size: 1rem;
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
 }
 
-/* تأثير ظهور تدريجي */
-.fade-in {
-  animation: fadeIn 1s ease forwards;
-  opacity: 0;
+.service-item h3 {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+.service-item p {
+    color: var(--text-color);
+    font-size: 1.1rem;
 }
 
-/* الأزرار العائمة */
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 2px solid var(--accent-color);
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+footer a {
+    color: var(--footer-text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Floating Buttons */
 .floating-buttons {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 1000;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
 }
 
-.floating-buttons a {
-  display: inline-block;
-  padding: 14px 20px;
-  font-size: 1.1rem;
-  color: white;
-  border-radius: 50px;
-  text-decoration: none;
-  box-shadow: 0 3px 6px rgb(0 0 0 / 0.2);
-  transition: background-color 0.3s ease;
-  text-align: center;
+.floating-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 255, 0, 0.5);
+}
+
+.floating-btn img {
+    width: 35px;
+    height: 35px;
+    filter: invert(1); /* Makes icons white if they are black */
 }
 
 .call-btn {
-  background: #004080;
-}
-
-.call-btn:hover {
-  background: #0059b3;
+    background-color: #25D366; /* WhatsApp Green for consistency, or a blue for call */
 }
 
 .whatsapp-btn {
-  background: #25d366;
+    background-color: #25D366; /* Official WhatsApp Green */
 }
 
-.whatsapp-btn:hover {
-  background: #1ebe56;
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .services h2 {
+        font-size: 2rem;
+    }
+
+    .service-item {
+        padding: 1rem;
+    }
+
+    .service-item h3 {
+        font-size: 1.5rem;
+    }
+
+    .service-item p {
+        font-size: 1rem;
+    }
+
+    .floating-buttons {
+        bottom: 15px;
+        left: 15px;
+        gap: 10px;
+    }
+
+    .floating-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .floating-btn img {
+        width: 30px;
+        height: 30px;
+    }
 }
 
-/* زر العودة للأعلى */
-#topBtn {
-  display: none;
-  position: fixed;
-  bottom: 90px;
-  left: 20px;
-  z-index: 1001;
-  font-size: 1rem;
-  padding: 10px 16px;
-  background-color: var(--color-primary);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-  transition: background-color 0.3s ease;
-}
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
 
-#topBtn:hover {
-  background-color: #003366;
-}
+    header p {
+        font-size: 0.9rem;
+    }
 
-/* صور lazy loading (تأكد تستخدم class="lazy" وعند تحميلها تعطي src من data-src) */
-img.lazy {
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
+    .services {
+        padding: 1.5rem;
+    }
 
-img.lazy:not([src]) {
-  visibility: hidden;
-}
-
-img.lazy[src] {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* تجاوب */
-@media (max-width: 600px) {
-  body {
-    padding: 15px 10px;
-  }
-  .floating-buttons {
-    left: 10px;
-    bottom: 15px;
-  }
-  #topBtn {
-    left: 10px;
-    bottom: 70px;
-    padding: 8px 12px;
-    font-size: 0.9rem;
-  }
-  header h1 {
-    font-size: 2rem;
-  }
-}
-
-/* تحسينات إضافية */
-a:focus, button:focus {
-  outline: 2px solid var(--color-secondary);
-  outline-offset: 3px;
+    .services h2 {
+        font-size: 1.8rem;
+    }
 }
