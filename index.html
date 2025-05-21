@@ -1,69 +1,66 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="سطحة هيدروليك لخدمات نقل السيارات داخل وخارج المدينة بسرعة وأمان." />
-  <meta name="theme-color" content="#001f3f" />
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="css/style.css" />
-  <title>سطحة هيدروليك</title>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="سطحة هيدروليك لنقل السيارات بأمان وسرعة داخل وخارج المدن. نوفر خدمات نقل السيارات المتعطلة، المتضررة، وإلى مراكز الصيانة والفحص باستخدام زلاجات خاصة.">
+    <meta name="keywords" content="سطحة هيدروليك, نقل سيارات, سطحة, سحب سيارات, نقل سيارات بين المدن, نقل سيارات لمراكز الصيانة, نقل سيارات لمراكز الفحص, سطحة هيدروليك في السعودية, سطحة طوارئ, سحب سيارات متعطلة">
+    <meta name="author" content="سطحة هيدروليك">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="YOUR_WEBSITE_URL_HERE"> <title>سطحة هيدروليك - خدمات نقل السيارات الآمنة والسريعة</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png"> </head>
 <body>
-  <header>
-    <h1>سطحة هيدروليك</h1>
-    <p class="subtitle">خدمة نقل سيارات آمنة وسريعة</p>
-    <p class="greeting" id="greeting"></p>
-  </header>
+    <header>
+        <h1>سطحة هيدروليك</h1>
+        <p>خدمات نقل السيارات الآمنة والسريعة لجميع احتياجاتك</p>
+    </header>
 
-  <main class="services">
-    <h2>خدماتنا</h2>
-    <ul id="service-list"></ul>
-  </main>
+    <main>
+        <section class="services">
+            <h2>الخدمات</h2>
 
-  <div class="floating-buttons">
-    <a href="tel:0500000000" class="call-btn">اتصل الآن</a>
-    <a href="https://wa.me/966500000000" class="whatsapp-btn" target="_blank">واتساب</a>
-  </div>
+            <div class="service-item">
+                <h3>نقل السيارات من وإلى مراكز الصيانة</h3>
+                <p>نوفر خدمة نقل آمنة وسريعة للسيارات المتعطلة أو التي تحتاج لصيانة دورية، من موقع العميل إلى مركز الصيانة المعتمد، والعكس، باستخدام سطحه هيدروليك مجهزة بالكامل.</p>
+            </div>
 
-  <button id="topBtn" onclick="scrollToTop()">أعلى</button>
+            <div class="service-item">
+                <h3>نقل السيارات من وإلى مراكز التقديرات</h3>
+                <p>نقوم بنقل السيارات المتضررة إلى مراكز تقدير الحوادث المعتمدة بكل احترافية، لتسريع إجراءات التأمين والتقييم الفني بدقة وسلاسة.</p>
+            </div>
 
-  <script>
-    // تخصيص التحية حسب الوقت
-    const greeting = document.getElementById("greeting");
-    const hour = new Date().getHours();
-    greeting.textContent =
-      hour < 12
-        ? "صباح الخير! نحن في خدمتك الآن."
-        : hour < 18
-        ? "مساء الخير! تواصل معنا لأي مساعدة."
-        : "مرحبًا بك في أي وقت، اتصل بنا فورًا!";
+            <div class="service-item">
+                <h3>نقل السيارات من وإلى مراكز الفحص الدوري</h3>
+                <p>نساعدك في إيصال سيارتك إلى مركز الفحص الدوري واستلامها بعد الانتهاء، مع الالتزام التام بالمواعيد وضمان سلامة المركبة أثناء النقل.</p>
+            </div>
 
-    // تحميل الخدمات من ملف JSON
-    fetch("data.json")
-      .then(res => res.json())
-      .then(data => {
-        const list = document.getElementById("service-list");
-        data.services.forEach(service => {
-          const li = document.createElement("li");
-          li.textContent = service;
-          list.appendChild(li);
-        });
-      });
+            <div class="service-item">
+                <h3>نقل السيارات بين المدن</h3>
+                <p>خدمة مخصصة لنقل السيارات بين مختلف مدن المملكة بكل أمان، مع تغطية واسعة وسائقين ذوي خبرة لضمان تسليم المركبة في الوقت المحدد.</p>
+            </div>
 
-    // زر العودة للأعلى
-    const topBtn = document.getElementById("topBtn");
-    window.onscroll = function () {
-      topBtn.style.display = window.scrollY > 100 ? "block" : "none";
-    };
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+            <div class="service-item">
+                <h3>يوجد زلاجات في حال عدم عمل القير</h3>
+                <p>لتوفير أقصى درجات السلامة، نستخدم زلاجات خاصة لسحب السيارات التي لا يعمل فيها القير، دون التسبب بأي ضرر أثناء التحميل أو النقل.</p>
+            </div>
+        </section>
+    </main>
 
-    // تسجيل Service Worker
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("sw.js");
-    }
-  </script>
+    <footer>
+        <p>&copy; 2024 سطحة هيدروليك. جميع الحقوق محفوظة.</p>
+        <p><a href="privacy_policy.html">سياسة الخصوصية والاستخدام</a></p>
+    </footer>
+
+    <div class="floating-buttons">
+        <a href="tel:+96650XXXXXXX" class="floating-btn call-btn" aria-label="اتصل بنا">
+            <img src="img/call-icon.png" alt="أيقونة الاتصال">
+        </a>
+        <a href="https://wa.me/96650XXXXXXX" class="floating-btn whatsapp-btn" target="_blank" aria-label="تواصل واتساب">
+            <img src="img/whatsapp-icon.png" alt="أيقونة واتساب">
+        </a>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
