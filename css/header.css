@@ -1,0 +1,22 @@
+/* Header Styles */
+header {
+    background-color: var(--header-footer-bg);
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-green);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.5rem;
+    color: var(--accent-green);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.3rem;
+    color: var(--main-text-color);
+    margin-top: 0.7rem;
+}
