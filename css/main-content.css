@@ -1,0 +1,77 @@
+/* Main Content Area and Services Section Styles */
+main {
+    flex: 1; /* Allows main content to expand and push footer to the bottom */
+    padding: 2.5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.services {
+    background-color: rgba(0, 0, 0, 0.4); /* Slightly darker transparent background */
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+.services h2 {
+    font-size: 3rem;
+    color: var(--accent-green);
+    text-align: center;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    position: relative;
+    padding-bottom: 15px;
+}
+.services h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background-color: var(--accent-green);
+    border-radius: 2px;
+}
+
+.service-item {
+    background-color: var(--service-item-bg);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    border-right: 6px solid var(--accent-green); /* Changed to right border for RTL */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 255, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker on hover */
+}
+
+.service-item h3 {
+    color: var(--accent-green);
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+.service-item h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0; /* Align to the right for RTL */
+    width: 60px;
+    height: 3px;
+    background-color: var(--main-text-color);
+    border-radius: 2px;
+}
+
+.service-item p {
+    color: var(--main-text-color);
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
