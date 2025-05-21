@@ -1,0 +1,102 @@
+/* Responsive Design - Media Queries for different screen sizes */
+@media (max-width: 992px) {
+    header h1 {
+        font-size: 3rem;
+    }
+    header p {
+        font-size: 1.1rem;
+    }
+    .services h2 {
+        font-size: 2.5rem;
+    }
+    .service-item h3 {
+        font-size: 1.9rem;
+    }
+    .service-item p {
+        font-size: 1.1rem;
+    }
+    main {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1.5rem 0;
+    }
+    header h1 {
+        font-size: 2.5rem;
+    }
+    header p {
+        font-size: 1rem;
+    }
+    .services {
+        padding: 2rem;
+    }
+    .services h2 {
+        font-size: 2.2rem;
+    }
+    .service-item {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .service-item h3 {
+        font-size: 1.7rem;
+    }
+    .service-item p {
+        font-size: 1rem;
+    }
+    .floating-buttons {
+        bottom: 15px;
+        right: 15px;
+        gap: 15px;
+    }
+    .floating-btn {
+        width: 55px;
+        height: 55px;
+    }
+    .floating-btn img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    header p {
+        font-size: 0.9rem;
+    }
+    .services {
+        padding: 1.5rem;
+    }
+    .services h2 {
+        font-size: 1.8rem;
+    }
+    .service-item {
+        padding: 1rem;
+    }
+    .service-item h3 {
+        font-size: 1.4rem;
+    }
+    .service-item p {
+        font-size: 0.95rem;
+    }
+    footer {
+        padding: 1rem 0;
+    }
+    .floating-buttons {
+        bottom: 10px;
+        right: 10px;
+        gap: 10px;
+    }
+    .floating-btn {
+        width: 45px;
+        height: 45px;
+    }
+    .floating-btn img {
+        width: 28px;
+        height: 28px;
+    }
+}
