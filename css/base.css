@@ -1,0 +1,48 @@
+/* Base Styles, Global Variables, and Utility Classes */
+
+/* Custom Properties for Colors - Define your color palette */
+:root {
+    --primary-bg-dark: #000033; /* Very Dark Blue */
+    --secondary-bg-dark: #000066; /* Slightly Lighter Dark Blue for Gradient */
+    --accent-green: #00FF00; /* Bright Green for emphasis */
+    --main-text-color: #FFFFFF; /* White for main text */
+    --footer-text-color: #CCCCCC; /* Light Grey for footer text */
+    --service-item-bg: rgba(0, 0, 0, 0.5); /* Semi-transparent black for service boxes */
+    --header-footer-bg: rgba(0, 0, 0, 0.3); /* Semi-transparent black for header/footer */
+}
+
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Gradient Background */
+    background: linear-gradient(135deg, var(--primary-bg-dark) 0%, var(--secondary-bg-dark) 100%);
+    color: var(--main-text-color);
+    line-height: 1.6;
+    direction: rtl; /* Right-to-left for Arabic */
+    text-align: right; /* Align text to the right */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    min-height: 100vh; /* Ensure full viewport height */
+    display: flex; /* Use flexbox for sticky footer */
+    flex-direction: column;
+}
+
+/* Prevent text selection (copy-paste) - Stronger deterrence */
+body {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Safari */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* Basic Reset for elements, if needed */
+h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
