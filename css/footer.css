@@ -1,0 +1,25 @@
+/* Footer Styles */
+footer {
+    background-color: var(--header-footer-bg);
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 2px solid var(--accent-green);
+    margin-top: auto; /* Push footer to the bottom */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer a {
+    color: var(--footer-text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--accent-green);
+    text-decoration: underline;
+}
