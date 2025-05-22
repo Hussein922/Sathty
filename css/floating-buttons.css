@@ -43,6 +43,7 @@
 .floating-btn img {
     width: 40px;
     height: 40px;
+    /* هذا السطر مهم جداً. إذا كانت أيقوناتك الأصلية سوداء، اتركه. إذا كانت بيضاء، قم بإزالته. */
     filter: invert(1); /* This turns black icons white, and white icons black. Adjust as needed. */
     object-fit: contain; /* Ensures the image scales properly within its container */
 }
